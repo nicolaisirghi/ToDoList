@@ -11,7 +11,7 @@
     "build": "cd client && npm run build",
     "install:client": "cd client && npm i",
     "install:server": "cd server && npm i",
-    "install:all": "npm run install:client && npm run install:server",
+    "install:all": "npm i && npm run install:client && npm run install:server",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md}\"",
     "lint": "npm run lint:client && npm run lint:server",
     "lint:client": "cd client && npm run lint",
