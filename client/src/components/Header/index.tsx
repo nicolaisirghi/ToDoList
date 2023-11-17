@@ -7,11 +7,11 @@ export type Level = 1 | 2 | 3 | 4 | 5 | 6;
 interface Props {
   level: Level;
   children?: ReactNode;
-  className?:string;
+  className?: string;
 }
 
-export const Header: FC<Props> = ({ level, children,className }) => {
-  const _className = classNames(`tdl-header-${level}`,className)
+export const Header: FC<Props> = ({ level, children, className }) => {
+  const _className = classNames(`tdl-header-${level}`, className);
   const header = getHeader[level];
-  return createElement(header, {className:_className}, children);
+  return createElement(header, { className: _className }, children);
 };

@@ -11,19 +11,28 @@ const api = axios.create({
   },
 });
 
-export const GetTodos = () => api.get<{ todos: Todos }>('/todos').then(res => res.data);
-export const AddTodo = (value: string) => api.post<{
-  todo: ResponseTodo,
-  created?: boolean
-}>('/todos', { value }).then(res => res.data);
+export const GetTodos = () => api.get<{ todos: Todos }>('/todos').then((res) => res.data);
+export const AddTodo = (value: string) =>
+  api
+    .post<{
+      todo: ResponseTodo;
+      created?: boolean;
+    }>('/todos', { value })
+    .then((res) => res.data);
 
-export const UpdateTodo = ({ id, value, isCompleted }: Todo) => api.put<{ todo: Todo, updated: boolean }>('/todos', {
-  id,
-  value,
-  isCompleted,
-}).then(res => res.data);
+export const UpdateTodo = ({ id, value, isCompleted }: Todo) =>
+  api
+    .put<{ todo: Todo; updated: boolean }>('/todos', {
+      id,
+      value,
+      isCompleted,
+    })
+    .then((res) => res.data);
 
-export const DeleteTodo = (id: string) => api.delete<{
-  todo: Todo,
-  deleted: boolean
-}>('/todos', { data: { id } }).then(res => res.data);
+export const DeleteTodo = (id: string) =>
+  api
+    .delete<{
+      todo: Todo;
+      deleted: boolean;
+    }>('/todos', { data: { id } })
+    .then((res) => res.data);

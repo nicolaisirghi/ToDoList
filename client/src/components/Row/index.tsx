@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import classNames from 'classnames';
 
 interface Props {
@@ -9,8 +9,17 @@ interface Props {
   className?: string;
 }
 
-export const Row: FC<Props> = ({ justifyContent = 'center',alignItems = 'center', direction = 'row', children, className }) => {
+export const Row: FC<Props> = ({
+  justifyContent = 'center',
+  alignItems = 'center',
+  direction = 'row',
+  children,
+  className,
+}) => {
   const _className = classNames('tdl-row', className);
-  return <div
-    style={{ display: 'flex', flexDirection: direction, alignItems, justifyContent}} className={_className}>{children}</div>;
+  return (
+    <div style={{ display: 'flex', flexDirection: direction, alignItems, justifyContent }} className={_className}>
+      {children}
+    </div>
+  );
 };

@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useCallback, useState } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { ListItem } from '../../ui/TodoList/ListItem';
 
 interface Props {
@@ -12,9 +12,7 @@ interface Props {
   onSelected?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-
 export const List: FC<Props> = ({ items, onChange, onRemove, onSelected }) => {
-
   return (
     <ul>
       {items.map(({ value, id, isCompleted }) => (

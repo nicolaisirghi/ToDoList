@@ -6,6 +6,9 @@ interface Props {
 }
 
 export const CompleteButton: FC<Props> = ({ onClick }) => {
-  return <Button className='btn-complete'  height='42px' backgroundColor='#6ECCAF'
-                 onClick={onClick}>Set as Done</Button>;
+  return (
+    <Button className="btn-complete" height="42px" backgroundColor="#6ECCAF" onClick={onClick}>
+      Set as Done
+    </Button>
+  );
 };

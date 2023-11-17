@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useCallback, useState } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { RemoveButton } from '../RemoveButton';
 import { Row } from '../../../components/Row';
 import { TextEditor } from '../../../components/TextEditor';
@@ -19,13 +19,14 @@ export const ListItem: FC<Props> = ({ id, value, isCompleted, onChange, onCheckb
     'tdl-list--completed': isCompleted,
   });
 
-  return <li className={className}>
-    <Row className='w-full' justifyContent='space-between'>
-      <Checkbox id={id} isCompleted={isCompleted} onChange={onCheckboxChange}>
-        <TextEditor value={value} onChange={onChange} isCompleted={isCompleted} />
-        <RemoveButton onRemove={onRemove} />
-      </Checkbox>
-    </Row>
-  </li>;
-
+  return (
+    <li className={className}>
+      <Row className="w-full" justifyContent="space-between">
+        <Checkbox id={id} isCompleted={isCompleted} onChange={onCheckboxChange}>
+          <TextEditor value={value} onChange={onChange} isCompleted={isCompleted} />
+          <RemoveButton onRemove={onRemove} />
+        </Checkbox>
+      </Row>
+    </li>
+  );
 };

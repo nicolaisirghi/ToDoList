@@ -1,5 +1,5 @@
 import { Todo } from '../../types';
 
-export interface TodoState{
+export interface TodoState {
   todos: Todo[];
 }

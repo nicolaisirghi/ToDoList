@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, PropsWithChildren, useMemo, useState } from 'react';
+import React, { ChangeEvent, FC, PropsWithChildren, useMemo, useState } from 'react';
 
 interface Props {
   id?: string;
@@ -17,10 +17,17 @@ export const Checkbox: FC<PropsWithChildren<Props>> = ({ id, isCompleted, onChan
   };
 
   const _isChecked = useMemo(() => isCompleted || isChecked, [isCompleted, isChecked]);
-  return <>
-    <input type='checkbox' id={id} disabled={isCompleted} checked={_isChecked} className='tdl-input-checkbox'
-           onChange={handleChange} />
-    {children}
-  </>;
-
+  return (
+    <>
+      <input
+        type="checkbox"
+        id={id}
+        disabled={isCompleted}
+        checked={_isChecked}
+        className="tdl-input-checkbox"
+        onChange={handleChange}
+      />
+      {children}
+    </>
+  );
 };

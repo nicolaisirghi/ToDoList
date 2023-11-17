@@ -3,7 +3,6 @@ import { AddTodo, DeleteTodo, GetTodos, UpdateTodo } from '../../api';
 import { addTodo, deleteTodo, getTodos, updateTodo } from '../actions/todoActions';
 import { Todo } from '../../types';
 
-
 export const getTodosThunk = () => async (dispatch: AppDispatch) => {
   try {
     const { todos } = await GetTodos();
@@ -15,7 +14,6 @@ export const getTodosThunk = () => async (dispatch: AppDispatch) => {
       }));
 
       dispatch(getTodos(items));
-
     }
   } catch (error) {
     console.log('Error in getTodosThunk : ', error);
@@ -35,17 +33,19 @@ export const addTodoThunk = (todo: string) => async (dispatch: AppDispatch) => {
   }
 };
 
-export const updateTodoThunk = ({ value, id, isCompleted }: Todo) => async (dispatch: AppDispatch) => {
-  try {
-    console.log('updateTodoThunk', { value, id, isCompleted });
-    const updatedTodo = await UpdateTodo({ value, id, isCompleted });
-    if (updatedTodo.updated) {
-      dispatch(updateTodo({ value, id, isCompleted }));
+export const updateTodoThunk =
+  ({ value, id, isCompleted }: Todo) =>
+  async (dispatch: AppDispatch) => {
+    try {
+      console.log('updateTodoThunk', { value, id, isCompleted });
+      const updatedTodo = await UpdateTodo({ value, id, isCompleted });
+      if (updatedTodo.updated) {
+        dispatch(updateTodo({ value, id, isCompleted }));
+      }
+    } catch (e) {
+      console.log('Error in updateTodoThunk', e);
     }
-  } catch (e) {
-    console.log('Error in updateTodoThunk', e);
-  }
-};
+  };
 
 export const deleteTodoThunk = (id: string) => async (dispatch: AppDispatch) => {
   try {

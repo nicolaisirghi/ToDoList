@@ -16,7 +16,6 @@ export interface DeleteTodoAction {
   payload: string;
 }
 
-
 export interface UpdateTodoAction {
   type: typeof UPDATE_TODO;
   payload: Todo;

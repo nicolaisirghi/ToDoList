@@ -29,6 +29,9 @@ app.listen(port, () => __awaiter(void 0, void 0, void 0, function* () {
     if (!MONGO_URI) {
         throw new Error('No mongo URI found!');
     }
-    yield mongoose.connect(MONGO_URI).then(() => console.log('DB Connected')).catch((err) => console.log(err));
+    yield mongoose
+        .connect(MONGO_URI)
+        .then(() => console.log('DB Connected'))
+        .catch(err => console.log(err));
     console.log(`⚡️[server]: Server is running ON PORT ${port}`);
 }));

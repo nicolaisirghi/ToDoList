@@ -4,7 +4,7 @@ export interface Todo {
   isCompleted?: boolean;
 }
 
-export interface ResponseTodo{
+export interface ResponseTodo {
   _id: string;
   value: string;
   isCompleted?: boolean;

@@ -1,12 +1,12 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from 'mongoose'
 
 interface Todo {
-  value: string;
-  isCompleted: boolean;
+  value: string
+  isCompleted: boolean
 }
 
 const TodoSchema = new Schema<Todo>({
   value: { type: String, required: true },
   isCompleted: { type: Boolean, default: false },
-});
-export const TodoModel = model<Todo>('Todo', TodoSchema);
+})
+export const TodoModel = model<Todo>('Todo', TodoSchema)

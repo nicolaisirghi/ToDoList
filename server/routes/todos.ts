@@ -1,11 +1,11 @@
-import express from 'express';
-import TodosController from '../controller/todos';
+import express from 'express'
+import TodosController from '../controller/todos'
 
-const router = express.Router();
+const router = express.Router()
 
-router.get('/',TodosController.getTodos )
-router.post('/',TodosController.createTodo )
-router.put("/",TodosController.updateTodo)
-router.delete('/',TodosController.deleteTodo)
+router.get('/', TodosController.getTodos)
+router.post('/', TodosController.createTodo)
+router.put('/', TodosController.updateTodo)
+router.delete('/', TodosController.deleteTodo)
 
-export default router;
+export default router

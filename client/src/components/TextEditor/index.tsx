@@ -1,4 +1,4 @@
-import { FC, useRef, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { Input } from '../Input';
 import { SaveButton } from '../../ui/TodoList/SaveButton';
 import classNames from 'classnames';
@@ -26,12 +26,14 @@ export const TextEditor: FC<Props> = ({ value, onChange, isCompleted }) => {
     setEditable(false);
   };
 
-
-  return isEditable && !isCompleted ?
+  return isEditable && !isCompleted ? (
     <>
-      <Input autoFocus={true} ref={inputRef} className='tdl-input-edit' value={value} />
+      <Input autoFocus={true} ref={inputRef} className="tdl-input-edit" value={value} />
       <SaveButton onClick={onSave} />
-    </> :
-    <div className={className} onClick={handleClick}>{value}</div>;
-
+    </>
+  ) : (
+    <div className={className} onClick={handleClick}>
+      {value}
+    </div>
+  );
 };

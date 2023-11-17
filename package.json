@@ -11,12 +11,17 @@
     "build": "cd client && npm run build",
     "install:client": "cd client && npm i",
     "install:server": "cd server && npm i",
-    "install:all": "npm run install:client && npm run install:server"
+    "install:all": "npm run install:client && npm run install:server",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md}\"",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "prettier": "^3.1.0"
   }
 }
