@@ -1,0 +1,108 @@
+.tdl-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  width: 550px;
+  height: 800px;
+  padding: 30px;
+  background-color: white;
+
+  .tdl-header-1 {
+    font-size: 50px;
+  }
+
+  .search-wrapper {
+    width: 100%;
+
+    .tdl-input {
+      width: 80%;
+      height: 30px;
+      margin-right: 3px;
+      border-radius: 5px;
+      font-size: 24px;
+      padding: 5px 10px;
+      border: 2px solid #DDDDDD;
+
+      &:focus {
+        outline: none;
+        border-color: #12b1de;
+      }
+    }
+
+
+  }
+
+
+  &-list {
+    ul {
+      padding: 0 0 0 10px;
+      width: 100%;
+      height: 500px;
+      overflow-y: auto;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #DDDDDD;
+    }
+
+    .tdl-list {
+      margin: 15px 10px 15px;
+
+
+      .tdl-input-checkbox {
+        height: 25px;
+        width: 25px;
+      }
+
+      .tdl-input-edit, .tdl-view {
+        width: 300px;
+        font-size: 22px;
+        margin-right: 30px;
+      }
+
+      .tdl-view {
+
+        &--completed {
+          color: #c7c6c6;
+          text-decoration: line-through;
+        }
+      }
+
+
+      .tdl-input-edit {
+        height: 30px;
+
+        &:focus {
+          outline: none;
+          border-color: #00c7ff;
+          text-decoration: none;
+        }
+      }
+
+    }
+  }
+
+  .btn-complete {
+    color: white;
+    width: fit-content !important;
+    background-color: #A076F9;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #7A3EF9;
+    }
+  }
+
+
+}
+
+
